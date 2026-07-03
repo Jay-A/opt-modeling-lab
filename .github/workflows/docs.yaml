@@ -1,6 +1,26 @@
+name: Build and Deploy Docs
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   docs:
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout repository
@@ -32,7 +52,6 @@ jobs:
           cd docs
           doxygen Doxyfile || true
 
-      # optional but recommended tweak
       - name: Build Sphinx documentation
         run: |
           sphinx-build -E -a -b html docs docs/_build/html
