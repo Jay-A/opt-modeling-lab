@@ -12,7 +12,7 @@ Definition: Optimization Problem
 
 An optimization problem consists of optimization variables :math:`x \in \mathcal{X}`, an objective function :math:`f : \mathcal{X} \to \mathbb{R}`, and a feasible region :math:`X \subseteq \mathcal{X}` defined by a set of constraints.
 
-The goal is to compute:
+The goal is to compute
 
 .. math::
 
