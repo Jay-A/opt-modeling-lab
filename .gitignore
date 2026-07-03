@@ -1,0 +1,63 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+**/.ipynb_checkpoints/
+.ipython/
+*.nbconvert.ipynb
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testing caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+
+# Documentation builds
+docs/_build/
+docs/doctrees/
+docs/xml/
+docs/doxygen/
+
+# Logs
+*.log
+
+# Solver artifacts
+*.lp
+*.mps
+*.sol
+*.bas
+*.mst
+*.lp.gz
+*.mps.gz
+
+# Scratch workspace
+scratch/
+tmp/
+
+# Misc
+.python-version
+.ruff_cache/

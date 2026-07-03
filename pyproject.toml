@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "optilab"
+version = "0.1.0"
+description = "Experimental optimization modeling and backend interface exploration using Python-MIP and HiGHS."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Jay Appleton" }
+]
+
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "mip",
+    "highspy",
+    "jupyter"
+]
+
+[project.optional-dependencies]
+docs = [
+    "sphinx",
+    "breathe",
+    "sphinx-rtd-theme",
+    "myst-parser"
+]
+
+dev = [
+    "pytest",
+    "black",
+    "ruff"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
