@@ -16,13 +16,14 @@ Navigation
 ----------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Chapters
 
+   chapters/index
    chapters/selection_problems
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Problems
 
    problems/index
