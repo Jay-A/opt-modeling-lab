@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Opt Backend Lab** is an experimental optimization modeling framework designed to explore how mixed-integer programming (MIP) problems can be expressed, solved, and compared across different solver backends.
+**Opt Modeling Lab** is an experimental optimization modeling framework designed to explore how mixed-integer programming (MIP) problems can be expressed, solved, and compared across different solver backends.
 
 The project focuses on:
 
@@ -59,6 +59,17 @@ pip install -e .[dev]
 pip install -e .[docs]
 ```
 
+## 5. Register .venv Kernel with Name:
+
+```cmd
+python -m ipykernel install --user --name opt-modeling-lab --display-name "Opt Modeling Lab"
+```
+
+## 6. Launch Jupyter-lab:
+
+```cmd
+jupyter-lab
+```
 
 ---
 
