@@ -9,8 +9,8 @@ Core Areas
 
 This project is organized into two layers:
 
-- Chapters → conceptual and theoretical frameworks
-- Problems → concrete optimization models
+- Chapters: conceptual and theoretical frameworks
+- Problems: concrete optimization models
 
 Navigation
 ----------
@@ -28,3 +28,5 @@ Navigation
 
    problems/index
    problems/knapsack
+   problems/assignment
+   problems/facility_location

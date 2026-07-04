@@ -1,5 +1,11 @@
 # Opt Backend Lab
 
+Opt Backend Lab is an educational toolkit for exploring optimization modeling
+across multiple mixed-integer programming (MIP) solver backends through a common
+interface.
+
+[![Opt.Lab Docs](https://img.shields.io/badge/Docs-GitHub%20Pages-blue?logo=github)](https://jay-a.github.io/opt-modeling-lab/)
+
 ## Overview
 
 **Opt Modeling Lab** is an experimental optimization modeling framework designed to explore how mixed-integer programming (MIP) problems can be expressed, solved, and compared across different solver backends.
