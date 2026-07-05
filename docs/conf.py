@@ -15,3 +15,12 @@ extensions = [
 html_theme = "furo"
 html_title = "Opt Modeling Lab"
 html_short_title = "Opt Lab"
+
+html_sidebars = {
+    "**": ["sidebar/brand.html", "sidebar/navigation.html"]
+}
+
+html_theme_options = {
+    "sidebar_hide_name": False,
+    "navigation_with_keys": True,
+}
