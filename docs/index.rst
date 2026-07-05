@@ -1,6 +1,8 @@
 Opt Modeling Lab
 =================
 
+`GitHub Repository <https://github.com/Jay-A/opt-modeling-lab>`_
+
 A structured lab for exploring mixed-integer optimization models,
 solver backends, and modeling abstractions.
 
@@ -28,5 +30,8 @@ Navigation
 
    problems/index
    problems/knapsack
+   problems/set_cover
+   problems/set_packing
+   problems/set_partitioning
    problems/assignment
    problems/facility_location
