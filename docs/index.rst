@@ -23,6 +23,8 @@ Navigation
    :caption: Chapters
 
    chapters/index
+   chapters/selection_problems
+   chapters/assignment_problems
 
 .. toctree::
    :maxdepth: 1

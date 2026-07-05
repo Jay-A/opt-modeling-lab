@@ -1,5 +1,5 @@
-Opt Modeling Lab
-================
+Mixed Integer Optimization
+===========================
 
 Overview
 --------
@@ -227,16 +227,3 @@ structures. For example,
 Accordingly, each optimization problem presented in this lab is classified
 according to its dominant modeling pattern while recognizing that many
 real-world models span multiple categories.
-
-Navigation
-----------
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Chapters
-
-   chapters/selection_problems
-   chapters/assignment_problems
-   chapters/scheduling_problems
-   chapters/network_problems
-   chapters/advanced_models
