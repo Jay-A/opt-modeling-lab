@@ -1,5 +1,5 @@
 Mixed Integer Optimization
-==========================
+---------------------------
 
 Overview
 --------
@@ -15,12 +15,12 @@ focusing on a particular application domain, the emphasis is placed on the
 underlying modeling patterns that recur across many practical optimization
 problems.
 
-
 Chapters
 ---------
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
 
    selection_problems
    assignment_problems
