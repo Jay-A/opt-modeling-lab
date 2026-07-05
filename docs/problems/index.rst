@@ -38,3 +38,19 @@ Facility Location Problems
 
 - :doc:`facility_location` — Decide which facilities to open and assign clients
   to open facilities while minimizing fixed and assignment costs.
+
+Problem Subsections
+--------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   knapsack
+   set_cover
+   set_packing
+   set_partitioning
+   maximum_coverage
+   capital_budgeting
+   vertex_covering
+   assignment
+   facility_location

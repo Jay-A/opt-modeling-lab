@@ -19,27 +19,14 @@ Navigation
 ----------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Chapters
 
    chapters/index
-   chapters/selection_problems
-   chapters/assignment_problems
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Problems
-
-   problems/index
-   problems/knapsack
-   problems/set_cover
-   problems/set_packing
-   problems/set_partitioning
-   problems/maximum_coverage
-   problems/capital_budgeting
-   problems/vertex_covering
-   problems/assignment
-   problems/facility_location
 
 .. toctree::
    :maxdepth: 1
