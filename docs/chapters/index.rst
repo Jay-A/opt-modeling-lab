@@ -1,5 +1,5 @@
 Mixed Integer Optimization
-===========================
+---------------------------
 
 Overview
 --------
@@ -16,7 +16,7 @@ underlying modeling patterns that recur across many practical optimization
 problems.
 
 Definition: Optimization Problem
-================================
+---------------------------------
 
 An optimization problem consists of
 
@@ -233,6 +233,7 @@ Chapters
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
 
    selection_problems
    assignment_problems

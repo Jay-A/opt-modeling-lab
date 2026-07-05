@@ -1,5 +1,5 @@
 Opt Modeling Lab
-=================
+----------------
 
 `GitHub Repository <https://github.com/Jay-A/opt-modeling-lab>`_
 
@@ -27,6 +27,8 @@ Navigation
 .. toctree::
    :maxdepth: 2
    :caption: Problems
+
+   problems/index
 
 .. toctree::
    :maxdepth: 1
