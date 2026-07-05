@@ -33,6 +33,18 @@ Assignment Problems
 - :doc:`assignment` — Assign resources to tasks while minimizing total
   assignment cost.
 
+- :doc:`transportation` — Allocate continuous flows from supply nodes to demand
+  nodes at minimum cost.
+
+- :doc:`generalized_assignment` — Assign tasks to agents with capacity-limited
+  resources and coupled assignment decisions.
+
+- :doc:`multiassignment` — Assign multiple agents to multiple tasks under
+  capacity and coverage constraints.
+
+- :doc:`facility_location` — Decide which facilities to open and assign clients
+  to open facilities while minimizing fixed and assignment costs.
+
 Facility Location Problems
 --------------------------
 
@@ -51,6 +63,9 @@ Problem Subsections
    set_partitioning
    maximum_coverage
    capital_budgeting
-   vertex_covering
+   vertex_cover
    assignment
+   transportation
+   generalized_assignment
+   multiassignment
    facility_location

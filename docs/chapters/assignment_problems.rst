@@ -145,6 +145,9 @@ Navigation
    ../problems/assignment
    ../problems/transportation
    ../problems/generalized_assignment
+   ../problems/multiassignment
+   ../problems/balanced_unbalanced
+   ../problems/matching_problem
    ../problems/facility_location
 
 .. Assignment Models
