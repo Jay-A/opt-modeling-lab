@@ -33,6 +33,9 @@ Navigation
    problems/set_cover
    problems/set_packing
    problems/set_partitioning
+   problems/maximum_coverage
+   problems/capital_budgeting
+   problems/vertex_covering
    problems/assignment
    problems/facility_location
 

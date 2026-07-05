@@ -18,14 +18,14 @@ Selection Problems
 - :doc:`set_partitioning` — Select a collection of sets such that every element
   in a universe is covered exactly once.
 
-.. - :doc:`maximum_coverage` — Select up to a fixed number of sets to maximize the
-..   number of covered elements.
+- :doc:`maximum_coverage` — Select up to a fixed number of sets to maximize the
+  number of covered elements.
 
-.. - :doc:`capital_budgeting` — Select a subset of projects subject to budget and
-..   logical constraints to maximize total return.
+- :doc:`capital_budgeting` — Select a subset of projects subject to budget and
+  logical constraints to maximize total return.
 
-.. - :doc:`vertex_cover` — Select a minimum-size subset of vertices such that every
-..   edge in a graph is incident to at least one selected vertex.
+- :doc:`vertex_cover` — Select a minimum-size subset of vertices such that every
+  edge in a graph is incident to at least one selected vertex.
 
 Assignment Problems
 -------------------
