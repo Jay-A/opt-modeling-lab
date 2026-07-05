@@ -19,18 +19,21 @@ Navigation
 ----------
 
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:
+   :maxdepth: 1
    :caption: Chapters
 
    chapters/index
 
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:
+   :maxdepth: 1
    :caption: Problems
 
    problems/index
 
 .. toctree::
+   :titlesonly:
    :maxdepth: 1
    :caption: Modeling Layer
 
