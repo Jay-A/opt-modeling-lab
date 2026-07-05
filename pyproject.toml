@@ -26,7 +26,8 @@ docs = [
     "sphinx",
     "breathe",
     "sphinx-rtd-theme",
-    "myst-parser"
+    "myst-parser",
+    "furo"
 ]
 
 dev = [

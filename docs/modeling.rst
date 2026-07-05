@@ -27,7 +27,7 @@ the backend solver.
 Implementation Reference
 ------------------------
 
-.. automodule:: aliases
+.. automodule:: optilab.aliases
    :members:
    :undoc-members:
    :show-inheritance:
