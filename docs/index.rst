@@ -6,13 +6,14 @@ Opt Modeling Lab
 A structured lab for exploring mixed-integer optimization models,
 solver backends, and modeling abstractions.
 
-Core Areas
-----------
+Core Architecture
+------------------
 
-This project is organized into two layers:
+This project is organized into three layers:
 
-- Chapters: conceptual and theoretical frameworks
-- Problems: concrete optimization models
+- **Chapters**: conceptual and theoretical frameworks
+- **Problems**: concrete optimization models
+- **Modeling Layer**: solver-agnostic abstraction (``aliases.py``)
 
 Navigation
 ----------
@@ -22,7 +23,6 @@ Navigation
    :caption: Chapters
 
    chapters/index
-   chapters/selection_problems
 
 .. toctree::
    :maxdepth: 1
@@ -35,3 +35,9 @@ Navigation
    problems/set_partitioning
    problems/assignment
    problems/facility_location
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Modeling Layer
+
+   modeling

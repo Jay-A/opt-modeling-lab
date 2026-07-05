@@ -1,5 +1,5 @@
-Set Partitioning Problem (Crew Scheduling)
-==========================================
+Set Partitioning Problem
+=========================
 
 Overview
 --------
