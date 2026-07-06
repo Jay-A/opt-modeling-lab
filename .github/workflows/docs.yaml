@@ -45,7 +45,7 @@ jobs:
           pip install -e .[docs]
 
       - name: Clean previous build
-        run: rm -rf docs/_build
+        run: rm -rf docs/_build/*
 
       - name: Run Doxygen
         run: |

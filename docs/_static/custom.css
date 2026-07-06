@@ -1,0 +1,17 @@
+/* docs/_static/custom.css */
+
+/* Improve footnote readability */
+.footnote {
+    font-size: 0.9em;
+    opacity: 1;
+}
+
+/* Clean footnote references */
+.footnote-reference {
+    text-decoration: none;
+}
+
+/* Optional: improve math spacing slightly */
+.math {
+    overflow-x: auto;
+}

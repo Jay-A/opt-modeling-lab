@@ -1,16 +1,27 @@
-Mixed Integer Optimization
-===========================
+Mixed-Integer Programming
+==========================
 
-Mixed-integer programming (MIP) provides a flexible mathematical framework for
-modeling discrete decision problems arising in engineering, logistics,
-cybersecurity, finance, manufacturing, and operations research. Despite the
-diversity of these applications, many share a common mathematical structure.
+Abstracted slightly from Bertsimas et al. Chapter 1 definition, instances of continuous, discrete, and mixed integer optimization problems
+are innumerable and range in context pervasively throughout academia, engineering, industry, finance, logistics, cybersecurity, and entertainment among many others.
+The shear expanse of application space warrants further investigation into the topic for those curious. And, that is where we begin.
 
-The purpose of this lab is to develop intuition for constructing optimization
-models by studying a collection of canonical problem classes. Rather than
-focusing on a particular application domain, the emphasis is placed on the
-underlying modeling patterns that recur across many practical optimization
-problems.
+In concept, the optimization problems we will look at seek to find a solution :math:`x^*` in some set :math:`\mathcal{X}`
+that optimizes, either minimizes or maximizes, an objective function :math:`f(x)` for all :math:`x \in \mathcal{X}`.
+The path toward a solution to these problems is the topic of interest for this pseudo-course:
+
+Mixed-integer programming (MIP) is a mathematical framework for formulating
+and solving optimization problems that involve both continuous and discrete
+decisions, i.e. variables.
+It provides a unified way to model situations in which some decisions are
+quantitative (such as quantities, flows, or allocations), while others are
+discrete (such as yes/no choices, assignments, or sequencing decisions).
+
+The central idea is simple:
+
+> represent a decision problem as a set of variables, an objective function, and constraints, where some variables are restricted to integer values.
+
+Once formulated in this way, powerful optimization algorithms can be used to
+compute optimal or near-optimal solutions.
 
 Definition: Optimization Problem
 ---------------------------------
@@ -55,6 +66,11 @@ where :math:`A \in \mathbb{R}^{m \times n}`,
 Although individual optimization models may differ substantially in appearance,
 every model developed throughout this lab is an instance of this general
 framework.
+We will make every attempt to clearly state the how each problem ties back into this framework, because
+the purpose of this lab is to develop intuition for modeling optimization
+problems using MIP. We are not focused on a singular specific application domain, instead the goal 
+is use problem class abstractions that reveal underlying and recurring modeling structures to 
+approach optimization problems in a general sense.
 
 Components of a Mixed-Integer Program
 -------------------------------------
@@ -64,12 +80,13 @@ Every mixed-integer programming model consists of three fundamental components.
 Decision Variables
 ^^^^^^^^^^^^^^^^^^
 
-Decision variables represent the choices available to the optimizer. Depending
-on the application, variables may be
-
-- binary,
-- integer, or
-- continuous.
+Decision variables represent the choices available to the optimizer. Within the
+scope of mixed-integer programming, decision variables are defined over either
+**continuous** subsets of the real numbers or **integer** subsets of the
+integers. A particularly important class of integer variables are
+**binary** variables, whose values are restricted to :math:`\{0,1\}` and which
+are widely used to model logical decisions, selection, assignment, and on-off
+operating modes.
 
 Choosing an appropriate set of decision variables is often the most important
 step in constructing an effective optimization model.
@@ -77,26 +94,58 @@ step in constructing an effective optimization model.
 Objective Function
 ^^^^^^^^^^^^^^^^^^
 
-The objective function measures the quality of a feasible solution. Common
-objectives include
+An objective function is a mapping
 
-- maximizing profit,
-- minimizing cost,
-- maximizing coverage,
-- minimizing completion time, and
-- minimizing resource utilization.
+.. math::
 
-Throughout this lab we primarily study single-objective optimization models,
-although many practical problems involve multiple competing objectives.
+   f : \mathcal{X} \rightarrow \mathbb{R}
+
+that assigns a numerical measure of quality to each candidate solution
+:math:`x \in \mathcal{X}`.
+
+The optimization problem seeks a feasible solution
+
+.. math::
+
+   x^* \in X \subseteq \mathcal{X}
+
+that minimizes or maximizes this value,
+
+.. math::
+
+   x^* \in
+   \operatorname*{arg\,opt}_{x \in X} f(x),
+   \qquad
+   \operatorname{opt} \in \{\min,\max\}.
+
+The objective function encodes the criterion by which feasible solutions are
+evaluated. Selecting an appropriate objective is a modeling decision, and
+different objectives applied to the same feasible region can produce different
+optimization problems and computational behavior.
 
 Constraints
 ^^^^^^^^^^^
 
-Constraints define the feasible region by restricting the allowable values of
-the decision variables. They encode the physical, logical, or operational rules
-that every admissible solution must satisfy.
+Constraints are conditions imposed on the decision variables that define the
+feasible solutions of an optimization problem. Collectively, the constraints
+determine the set of solutions that are considered feasible.
 
-Typical constraints include
+Mathematically, constraints define the feasible region
+
+.. math::
+
+   X = \{x \in \mathcal{X} : g_i(x) \le 0,\; h_j(x) = 0\},
+
+where the functions :math:`g_i` and :math:`h_j` represent inequality and
+equality constraints, respectively. In mixed-integer programming, these
+constraints are most commonly linear or quadratic, giving rise to important
+problem classes such as mixed-integer linear programming (MILP),
+mixed-integer quadratic programming (MIQP), and mixed-integer nonlinear
+programming (MINLP).
+
+Regardless of type, all constraints encode the physical, logical, or
+operational rules that every feasible solution must satisfy. Typical examples
+include
 
 - resource limitations,
 - assignment requirements,
@@ -104,30 +153,12 @@ Typical constraints include
 - precedence conditions, and
 - flow conservation equations.
 
-The objective function determines which feasible solution is preferred, while
-the constraints determine which solutions are admissible.
-
-Standard and Strong Formulations
---------------------------------
-
-Different mathematical formulations may represent the same optimization
-problem.
-
-A **standard formulation** correctly describes the feasible solutions of the
-problem.
-
-A **strong formulation** describes the same feasible region while providing a
-tighter linear programming relaxation.
-
-Because modern mixed-integer programming solvers repeatedly solve linear
-relaxations during branch-and-bound, stronger formulations often
-
-- reduce the size of the search tree,
-- improve computational performance, and
-- produce stronger bounds throughout the solution process.
-
-Accordingly, the goal of this lab is not only to formulate optimization models
-correctly, but to formulate them strongly whenever possible.
+Selecting an appropriate set of constraints is a modeling decision. Different
+formulations may describe the same feasible region while exhibiting
+dramatically different computational behavior. Consequently, effective
+optimization modeling requires more than mathematical correctness—it also
+requires an understanding of how formulations influence the algorithms used to
+solve them.
 
 Modeling Patterns
 -----------------
@@ -154,7 +185,7 @@ Representative examples include
 Assignment Models
 ^^^^^^^^^^^^^^^^^
 
-Assignment models determine how one collection of entities should be matched to
+Assignment models determine how one collection of entities is matched to
 another.
 
 Representative examples include
@@ -167,8 +198,8 @@ Representative examples include
 Scheduling Models
 ^^^^^^^^^^^^^^^^^
 
-Scheduling models determine when activities should occur while respecting
-resource availability and temporal relationships.
+Scheduling models determine when activities occur while respecting resource
+availability and temporal relationships.
 
 Representative examples include
 
@@ -180,8 +211,8 @@ Representative examples include
 Network Models
 ^^^^^^^^^^^^^^
 
-Network models determine how flow, information, or resources move through a
-graph or transportation network.
+Network models describe how flow, information, or resources move through a
+graph or transportation system.
 
 Representative examples include
 
@@ -213,16 +244,16 @@ partition of mixed-integer programming problems.
 
 Instead, they provide a useful **covering** of the modeling landscape.
 
-Many practical optimization models naturally combine several modeling
-structures. For example,
+Many practical optimization models naturally combine multiple structures. For
+example,
 
 - facility location combines selection and assignment,
-- vehicle routing combines assignment, scheduling, and network optimization,
+- vehicle routing combines assignment, scheduling, and network structure,
 - production planning combines scheduling, network flow, and inventory
   management.
 
 Accordingly, each optimization problem presented in this lab is classified
-according to its dominant modeling pattern while recognizing that many
+according to its dominant modeling pattern, while recognizing that many
 real-world models span multiple categories.
 
 Chapters
@@ -234,3 +265,6 @@ Chapters
 
    selection_problems
    assignment_problems
+   scheduling_problems
+   network_problems
+   advanced_problems

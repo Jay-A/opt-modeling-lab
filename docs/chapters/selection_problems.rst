@@ -4,93 +4,81 @@ Selection-Style Optimization Problems
 Overview
 --------
 
-Selection problems are a fundamental class of mixed-integer programming (MIP)
-models in which the primary decision is:
+Selection problems are a fundamental class of mixed-integer programming models
+in which the primary modeling decision is determining which elements of a
+finite set should be included in a solution.
 
-> which subset of available items should be selected to optimize a given objective while satisfying constraints.
+These models arise whenever a decision maker must choose a subset of options
+subject to constraints, and they form one of the most basic structures in
+discrete optimization.
 
-These models form the foundation of discrete optimization, as many more
-complex formulations can be interpreted as generalized or structured selection
-problems.
+In all cases, selection decisions are represented using binary variables that
+indicate whether each element is included in the solution.
 
-In all cases, the decision is represented through binary variables indicating
-whether each item is included in the solution.
+Formulation Structure
+---------------------
 
-Connection to General MIP Framework
------------------------------------
-
-As introduced in the foundations chapter, every optimization model consists of
-decision variables, an objective function, and a feasible region defined by
-constraints.
-
-Selection models specialize this structure as follows:
-
-- **Decision variables**: binary indicators of item selection
-- **Objective function**: typically additive over selected items
-- **Constraints**: resource limitations or logical dependencies on selections
-
-Formally, selection models take the form:
+Selection models are typically expressed using binary decision variables
 
 .. math::
 
    x_i \in \{0,1\}, \quad i = 1,\dots,n
 
-with objective
+where :math:`x_i = 1` indicates that item :math:`i` is selected.
+
+A typical selection model takes the form
 
 .. math::
 
    \max / \min \sum_{i=1}^n c_i x_i
 
-subject to problem-specific constraints of the form
+subject to problem-specific constraints, commonly written in linear form as
 
 .. math::
 
-   Ax \le b
+   Ax \le b,
 
-or more structured combinatorial restrictions.
+or more structured combinatorial constraints depending on the application.
 
 Modeling Characteristics
 ------------------------
 
-Selection models are characterized by the following structural properties:
+Selection models exhibit several common structural features:
 
-- **binary decision structure**: each item is either selected or not
-- **additive or near-additive objectives**: total value is typically a sum over selected items
-- **global coupling through constraints**: feasibility depends on shared resource limits
-- **combinatorial explosion of feasible subsets**
+- binary decision structure representing inclusion or exclusion
+- additive or near-additive objective functions over selected items
+- coupling constraints that impose global feasibility conditions
+- exponentially large sets of possible solutions
 
-These properties make selection problems both expressive and computationally
-challenging.
+Despite their simplicity, these models capture a wide range of practical
+decision problems in logistics, finance, and network design.
 
-Despite their simplicity, selection models already capture many important
-practical decision problems in logistics, finance, and network design.
+Canonical Modeling Pattern
+--------------------------
 
-Canonical Structure
--------------------
+Most selection problems follow a common modeling pattern:
 
-Most selection problems follow a common modeling template:
-
-1. Define a set of candidate items
-2. Associate value and/or cost with each item
-3. Introduce binary decision variables for selection
-4. Encode constraints limiting feasible subsets
+1. Define a finite set of candidate items
+2. Associate values, costs, or utilities with each item
+3. Introduce binary variables representing selection decisions
+4. Define constraints restricting feasible subsets
 5. Optimize total value or cost over feasible selections
 
-This template will recur throughout all models in this chapter.
+This structure appears throughout all selection-based optimization models.
 
 Representative Problems
 -----------------------
 
 The following problems illustrate the selection modeling paradigm, ranging from
-simple additive structures to more complex combinatorial interactions.
+basic resource allocation to structured combinatorial optimization problems.
 
 Knapsack Problem
 ^^^^^^^^^^^^^^^^
 
 The knapsack problem is the canonical selection model.
 
-Given items with values and weights, the goal is to select a subset of items
-that maximizes total value without exceeding a capacity constraint.
+Given items with values and weights, the objective is to select a subset of
+items that maximizes total value without exceeding a capacity constraint.
 
 .. toctree::
    :maxdepth: 1
@@ -100,53 +88,57 @@ that maximizes total value without exceeding a capacity constraint.
 Capital Budgeting
 ^^^^^^^^^^^^^^^^^
 
-In capital budgeting, each project has an associated cost and expected return.
+In capital budgeting problems, each project has an associated cost and return.
 The objective is to select a subset of projects that maximizes total return
 subject to a budget constraint.
-
-(This will be introduced in a subsequent notebook.)
 
 Set Covering
 ^^^^^^^^^^^^
 
 In set covering problems, each item corresponds to a subset of elements, and
-the goal is to select a minimum-cost collection of sets such that every element
-is covered at least once.
+the goal is to select a minimum-cost collection of sets that covers all
+elements.
 
-Set covering introduces structured constraint interactions beyond simple
-resource limits.
+Set Packing / Set Partitioning
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+These models impose structural constraints on how subsets overlap or partition
+a ground set.
+
+Maximum Coverage
+^^^^^^^^^^^^^^^^
+
+Maximum coverage problems select a subset of sets to maximize the number of
+elements covered within a resource limit.
 
 Multi-Knapsack Variants
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Multi-knapsack problems extend the classical knapsack model by introducing
+Multi-knapsack models extend the classical knapsack structure by introducing
 multiple resource constraints simultaneously.
-
-These models capture more realistic allocation settings where multiple limited
-resources must be considered jointly.
 
 Facility Location (Selection Component)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Facility location models combine selection with assignment structure.
+Facility location models combine selection with assignment decisions.
 
 The selection component determines which facilities are opened, making it a
-natural extension of the selection modeling paradigm.
+direct extension of the selection modeling paradigm.
 
 Discussion
 ----------
 
-Selection models represent the simplest non-trivial class of MIP formulations,
-yet they already capture the core difficulty of combinatorial optimization:
-choosing an optimal subset from an exponentially large solution space.
+Selection models represent the simplest non-trivial class of mixed-integer
+programming formulations. Despite their simplicity, they capture the core
+difficulty of combinatorial optimization: selecting an optimal subset from an
+exponentially large set of possibilities.
 
 They serve as the foundation for more complex modeling patterns, including
 assignment, scheduling, and network optimization models introduced in later
 chapters.
 
 In the remainder of this section, we focus on implementing and analyzing
-canonical selection problems, beginning with the knapsack model as the
-prototypical example.
+canonical selection problems, beginning with the knapsack model.
 
 Navigation
 ----------
