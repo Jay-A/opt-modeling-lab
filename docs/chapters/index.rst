@@ -255,16 +255,3 @@ example,
 Accordingly, each optimization problem presented in this lab is classified
 according to its dominant modeling pattern, while recognizing that many
 real-world models span multiple categories.
-
-Chapters
----------
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   selection_problems
-   assignment_problems
-   scheduling_problems
-   network_problems
-   advanced_problems

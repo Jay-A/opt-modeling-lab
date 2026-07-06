@@ -32,10 +32,15 @@ Navigation
    :caption: Chapters
 
    chapters/index
+   chapters/selection_problems
+   chapters/assignment_problems
+   chapters/scheduling_problems
+   chapters/network_problems
+   chapters/advanced_problems
 
 .. toctree::
    :titlesonly:
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Problems
 
    problems/index
