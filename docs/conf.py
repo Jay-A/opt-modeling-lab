@@ -6,14 +6,12 @@ sys.path.insert(0, os.path.abspath("../src"))
 project = "Opt Modeling Lab"
 author = "Jay M. Appleton"
 release = "0.1.0"
-
-# Sphinx-native copyright 
 copyright = "2026, Jay M. Appleton"
 
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
-    "sphinx.ext.mathjax",   # important for your MIP math-heavy content
+    "sphinx.ext.mathjax",
 ]
 
 html_theme = "sphinx_book_theme"
@@ -25,25 +23,12 @@ html_theme_options = {
     "repository_url": "https://github.com/Jay-A/opt-modeling-lab",
     "use_repository_button": True,
     "use_edit_page_button": False,
-
     "home_page_in_toc": True,
-
-    "sidebar_hide_name": False,
-
     "navigation_with_keys": True,
-}
-
-html_sidebars = {
-    "**": [
-        "sidebar/brand.html",
-        "sidebar/search-field.html",
-        "sidebar/navigation.html",
-    ]
 }
 
 html_static_path = ["_static"]
 
-# Optional custom CSS (recommended for footnote control later)
 html_css_files = [
     "custom.css",
 ]
@@ -52,10 +37,4 @@ templates_path = ["_templates"]
 
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 
-# -----------------------------
-# Nitpicky build options 
-# -----------------------------
 nitpicky = False
-
-# Warn on missing references in cross-links (optional but useful later)
-# nitpick_ignore = []
